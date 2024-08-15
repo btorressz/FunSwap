@@ -1,0 +1,522 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_token2",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_partyA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_partyB",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountToken1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountToken2",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_deadline",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newDeadline",
+						"type": "uint256"
+					}
+				],
+				"name": "DeadlineExtended",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyA",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyB",
+						"type": "address"
+					}
+				],
+				"name": "SwapCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyA",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyB",
+						"type": "address"
+					}
+				],
+				"name": "SwapExpired",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyA",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "partyB",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountToken1",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountToken2",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "SwapInitiated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TokenRecovered",
+				"type": "event"
+			},
+			{
+				"stateMutability": "nonpayable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "amountToken1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "amountToken2",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "approveSwap",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deadline",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expireSwap",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newDeadline",
+						"type": "uint256"
+					}
+				],
+				"name": "extendDeadline",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gracePeriod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isCompleted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "partyA",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "partyB",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "recoverTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "status",
+				"outputs": [
+					{
+						"internalType": "enum FunSwap.SwapStatus",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token1",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token2",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "This contract uses the ReentrancyGuard to prevent reentrancy attacks",
+			"events": {
+				"DeadlineExtended(uint256)": {
+					"params": {
+						"newDeadline": "The new deadline for the swap"
+					}
+				},
+				"SwapCompleted(address,address)": {
+					"params": {
+						"partyA": "The address of party A",
+						"partyB": "The address of party B"
+					}
+				},
+				"SwapExpired(address,address)": {
+					"params": {
+						"partyA": "The address of party A",
+						"partyB": "The address of party B"
+					}
+				},
+				"SwapInitiated(address,address,uint256,uint256,uint256)": {
+					"params": {
+						"amountToken1": "The amount of Token A being swapped",
+						"amountToken2": "The amount of Token B being swapped",
+						"deadline": "The deadline by which the swap must be completed",
+						"partyA": "The address of party A (Token A owner)",
+						"partyB": "The address of party B (Token B owner)"
+					}
+				},
+				"TokenRecovered(address,address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens recovered",
+						"recipient": "The address of the recipient who recovered the tokens",
+						"token": "The address of the token recovered"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"approveSwap()": {
+					"details": "Ensures the swap is only completed if both tokens have been transferred to the contract"
+				},
+				"constructor": {
+					"params": {
+						"_amountToken1": "The amount of Token A to be swapped",
+						"_amountToken2": "The amount of Token B to be swapped",
+						"_deadline": "The deadline by which the swap must be completed",
+						"_partyA": "The address of party A (owner of Token A)",
+						"_partyB": "The address of party B (owner of Token B)",
+						"_token1": "The address of the first token (Token A)",
+						"_token2": "The address of the second token (Token B)"
+					}
+				},
+				"extendDeadline(uint256)": {
+					"params": {
+						"newDeadline": "The new deadline for the swap"
+					}
+				},
+				"recoverTokens(address)": {
+					"params": {
+						"token": "The address of the token to be recovered"
+					}
+				}
+			},
+			"stateVariables": {
+				"flags": {
+					"details": "Internal flags to track the swap state (0 = not completed, 1 = completed)"
+				}
+			},
+			"title": "FunSwap - A simple token swapping contract between two parties",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"DeadlineExtended(uint256)": {
+					"notice": "Emitted when the swap deadline is extended"
+				},
+				"SwapCompleted(address,address)": {
+					"notice": "Emitted when the swap is completed"
+				},
+				"SwapExpired(address,address)": {
+					"notice": "Emitted when the swap expires"
+				},
+				"SwapInitiated(address,address,uint256,uint256,uint256)": {
+					"notice": "Emitted when the swap is initiated"
+				},
+				"TokenRecovered(address,address,uint256)": {
+					"notice": "Emitted when tokens are recovered after expiration"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"amountToken1()": {
+					"notice": "The amount of Token A to be swapped"
+				},
+				"amountToken2()": {
+					"notice": "The amount of Token B to be swapped"
+				},
+				"approveSwap()": {
+					"notice": "Approves the swap of tokens between the parties"
+				},
+				"constructor": {
+					"notice": "Constructor to initialize the contract with tokens, parties, and amounts"
+				},
+				"deadline()": {
+					"notice": "The deadline by which the swap must be completed"
+				},
+				"expireSwap()": {
+					"notice": "Expires the swap if the deadline has passed and neither party has completed the swap"
+				},
+				"extendDeadline(uint256)": {
+					"notice": "Extends the deadline for the swap"
+				},
+				"gracePeriod()": {
+					"notice": "A grace period after the deadline before the swap is considered expired"
+				},
+				"isCompleted()": {
+					"notice": "Indicates whether the swap has been completed or not"
+				},
+				"partyA()": {
+					"notice": "The address of party A (who owns Token A)"
+				},
+				"partyB()": {
+					"notice": "The address of party B (who owns Token B)"
+				},
+				"recoverTokens(address)": {
+					"notice": "Recovers tokens after the swap expires"
+				},
+				"token1()": {
+					"notice": "The address of the first token in the swap (Token A)"
+				},
+				"token2()": {
+					"notice": "The address of the second token in the swap (Token B)"
+				}
+			},
+			"notice": "This contract allows two parties to swap tokens between each other with optional expiration handling",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FunSwap.sol": "FunSwap"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"contracts/FunSwap.sol": {
+			"keccak256": "0x109056a5847711c7ade5da7c77d2b967b2d77759e6cfd157c839ab7cd503d31f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a4e269d32c705370b052f2acd592e3eaff0e3742aa119bae73ccd616d0630ec2",
+				"dweb:/ipfs/QmT6StUQMhmArR4by62vyDf3nLkPcwzxCxfuQxiGZo6BLS"
+			]
+		}
+	},
+	"version": 1
+}
