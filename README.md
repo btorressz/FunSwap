@@ -23,3 +23,12 @@ This project was developed for a private client and serves as an example of the 
 - **AmountToken2**: The amount of Token2 being swapped.
 - **Deadline**: The time limit within which the swap must be completed.
 - **Grace Period**: An additional time window after the deadline to allow swaps to proceed.
+
+  ## Testing
+
+The contract has been fully tested using Solidity test cases with the following checks:
+- Approving tokens for swap by both parties.
+- Completing the swap when both tokens are transferred.
+- Handling expiration if the deadline is missed.
+- Recovering tokens after expiration.
+- Extending the deadline by Party A.
